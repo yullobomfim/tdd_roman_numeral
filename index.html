@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho TDD - Yullo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+        }
+
+        .container {
+            max-width: 40em;
+            margin: 0 auto;
+            padding: 1em;
+            border: 1px solid;
+
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 0.5em;
+            display: block;
+            font-size: inherit;
+            font-family: inherit;
+            color: inherit;
+            background: none;
+            border: 1px solid;
+            border-radius: none;
+        }
+
+        .form__row {
+            margin-top: 0.5em;
+            display: flex
+        }
+        .form__input:focus,
+        .form__btn:focus{
+            outline: 2px solid skyblue;
+            outline-offset: 4px;
+        }
+
+        .form__btn{
+            margin-left: 0.5em;
+            color: white;
+            background-color: palevioletred;
+            border:none;
+            transition: background-color 0.2s;
+        }
+        .form__btn:hover{
+            background-color: #b82e5c;
+        }
+        .results{
+            min-height: 5em;
+            margin-top: 1em;
+            display: flex;
+            font-size: 1.5em;
+            justify-content: center;
+            align-items: center;
+            border:1px solid;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        
+        <h1>Application using TDD </h1>
+        <h2>Test Driven Development</h2>
+        <h4>Yullo Costa Bomfim</h4>
+        <br>
+        <h3>Roman Numeral Coverter</h3>
+        <form class="form" id="js-form">
+            <label class="form__input" for="numInput">Enter a number</label>
+            <div class="form__row">
+                <input class="form__input" type="number" id="numInput" required autofocus>
+                <button class="form__btn" type="submit">Submit</button>
+            </div>
+        </form>
+        <div class="results" id="js-result"> </div>
+    </main>
+    <script src="romanizer.js"></script>
+    <script>
+        var form = document.getElementById('js-form')
+        var results = document.getElementById('js-result')
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            var roman = romanizer(event.target[0].value);
+            results.textContent = roman;
+        })
+    </script>
+</body>
+
+</html>

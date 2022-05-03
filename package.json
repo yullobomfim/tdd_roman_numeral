@@ -1,0 +1,16 @@
+{
+  "name": "romanizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon romanizer.test.js | tap-spec"
+  },
+  "author": "Yullo Bomfim",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.16",
+    "tap-spec": "^5.0.0",
+    "tape": "^5.5.3"
+  }
+}
